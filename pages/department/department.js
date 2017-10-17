@@ -1,14 +1,47 @@
-// pages/login/login.js
+// pages/department/department.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		userName: '',
-		password: '',
-		isError: false,
-		errorText: ''
+		deptsData: [{
+			name: 'A部门',
+			count: 10
+		},{
+			name: 'B部门',
+			count: 20
+		},{
+			name: 'C部门',
+			count: 30
+		},{
+			name: 'D部门',
+			count: 40
+		},{
+			name: 'E部门',
+			count: 50
+		},{
+			name: 'F部门',
+			count: 60
+		},{
+			name: 'A部门',
+			count: 10
+		},{
+			name: 'B部门',
+			count: 20
+		},{
+			name: 'C部门',
+			count: 30
+		},{
+			name: 'D部门',
+			count: 40
+		},{
+			name: 'E部门',
+			count: 50
+		},{
+			name: 'F部门',
+			count: 60
+		}]
 	},
 
 	/**
@@ -65,34 +98,5 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
-	},
-
-	/**
-	 * 输入手机号（用户名）
-	 */
-	bindUserNameInput: function(e) {
-		this.setData({
-			userName: e.detail.value
-		});
-	},
-
-	/**
-	 * 输入密码
-	 */
-	bindPasswordInput: function (e) {
-		this.setData({
-			password: e.detail.value
-		});
-	},
-	
-	/**
-	 * 点击登录按钮
-	 */
-	login: function (e) {
-		this.setData({
-			isError: true,
-			errorText: "请输入正确的手机号或密码"
-		});
-		console.log(this.data.userName, this.data.password);
 	}
 })

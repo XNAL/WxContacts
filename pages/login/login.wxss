@@ -1,1 +1,67 @@
 /* pages/login/login.wxss */
+
+.container {
+    padding: 0;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-60%);
+    width: 100%;
+}
+
+.login-container .app-title {
+    display: block;
+    text-align: center;
+    font-size: 64rpx;
+    line-height: 72rpx;
+    margin-bottom: 80rpx;
+}
+
+.login-container .section {
+    width: 100%;
+}
+
+.login-container .section input {
+    margin: 0 auto 40rpx;
+    padding: 0 28rpx;
+    width: 80%;
+    height: 72rpx;
+    line-height: 68rpx;
+    border: 2rpx solid #ccc;
+    border-radius: 40rpx;
+	box-sizing: border-box;
+}
+
+.login-container .section button {
+    width: 80%;
+    height: 72rpx;
+    padding: 0;
+    margin: 10rpx auto 0;
+    font-size: 28rpx;
+    color: #fff;
+    line-height: 68rpx;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 40rpx;
+    background: #2d8cf0;
+	cursor: pointer;
+}
+.login-form {
+    position: relative;
+    display:block;    
+    padding-bottom: 20px;
+}
+.error {
+    position: absolute;
+    left: 10%;
+    display: block;
+    padding-left: 28rpx;
+    color: red;
+    height: 28rpx;
+    font-size: 28rpx;
+    line-height: 1;
+    margin-top: -20rpx;
+}

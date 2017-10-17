@@ -8,7 +8,7 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.6.0",
-	"appid": "touristappid",
+	"appid": "wxccfa8f08d2448a27",
 	"projectname": "WxContacts",
 	"condition": {
 		"weapp": {

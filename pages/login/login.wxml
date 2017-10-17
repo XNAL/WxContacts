@@ -1,2 +1,19 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class="container">
+    <view class="login-container">
+		<text class="app-title">校园通讯录</text>
+        <form class="login-form">
+            <view class="section">
+                <input name="userName" bindinput="bindUserNameInput" placeholder="手机号码" />
+            </view>
+            <view class="section">
+                <input name="password" bindinput="bindPasswordInput" type="password" placeholder="密码" />
+            </view>
+			<text class="{{ isError ? 'error' : ''}}">{{errorText}}</text>
+        </form>
+        <view class="section">
+            <button bindtap="login">立即登录</button>
+        </view>
+        <!-- <button class="btn-login">立即登录</button> -->
+    </view>
+</view>
