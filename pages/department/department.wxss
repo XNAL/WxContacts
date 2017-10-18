@@ -1,51 +1,49 @@
 /* pages/department/department.wxss */
+
 .container {
 	padding: 0;
 }
+
 .dept-container {
 	width: 100%;
 }
+
 .dept-container .section {
 	padding: 20rpx;
 	box-sizing: border-box;
 	border-bottom: 2rpx solid #ddd;
 }
-.dept-container .section button {
-	position: absolute;
-	right: 20rpx;
-	top: 20rpx;
-	width: 140rpx;
-    height: 50rpx;
-	font-size: 24rpx;
-    line-height: 48rpx;
-	background-color: #eee;
+
+.dept-container .section input {
+	padding: 0 28rpx;
+	widows: 100%;
+	height: 72rpx;
+	font-size: 36rpx;
+	line-height: 72rpx;
+	background: #eee;
 	border: 2rpx solid #eee;
 	border-radius: 12rpx;
-	outline: none;
-}
-.dept-container .section button::after {
-	border: 2rpx solid #eee;
-}
-.dept-container .section input {
-    padding: 0 28rpx;
-	margin-right: 160rpx;
-    height: 48rpx;
-	font-size: 24rpx;
-    line-height: 48rpx;
-	background: #eee;
-    border: 2rpx solid #eee;
-    border-radius: 12rpx;
 	box-sizing: border-box;
-	/* text-align: center; */
+	text-align: center;
 }
+
 .scroll-view-item {
-	padding: 30rpx;
+	margin-left: 30rpx;
 	border-bottom: 2rpx solid #eee;
 }
-.scroll-view-item .dept-name {
-	color: #666;
+
+.scroll-view-item navigator {
+	padding: 30rpx 30rpx 30rpx 0;
 }
-.scroll-view-item .dept-count{
+
+.scroll-view-item .dept-name {
+	font-size: 48rpx;
+	color: #333;
+}
+
+.scroll-view-item .dept-count {
 	float: right;
 	color: #999;
+	margin-top: 12rpx;
+	font-size: 36rpx;
 }

@@ -89,10 +89,24 @@ Page({
 	 * 点击登录按钮
 	 */
 	login: function (e) {
+		if(this.data.userName === '' || this.data.password === '') {
+			this.setData({
+				isError: true,
+				errorText: "手机号或密码不能为空"
+			});
+			return;
+		}
 		this.setData({
 			isError: true,
 			errorText: "请输入正确的手机号或密码"
 		});
-		console.log(this.data.userName, this.data.password);
+		// console.log(this.data.userName, this.data.password);
+		wx.setStorageSync('userInfo', {
+			userName: this.data.userName
+		});
+		
+		wx.switchTab({
+			url: "/pages/department/department"
+		});
 	}
 })

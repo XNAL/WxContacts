@@ -7,13 +7,20 @@
 		"minified": true
 	},
 	"compileType": "weapp",
-	"libVersion": "1.6.0",
+	"libVersion": "1.5.2",
 	"appid": "wxccfa8f08d2448a27",
 	"projectname": "WxContacts",
 	"condition": {
 		"weapp": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				}
+			]
 		},
 		"search": {
 			"current": -1,

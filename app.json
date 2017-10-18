@@ -1,38 +1,39 @@
 {
-	"pages": [
-		"pages/department/department",
-		"pages/login/login",
-		"pages/index/index",
-		"pages/logs/logs",
-		"pages/subject/subject"
-	],
-	"window": {
-		"backgroundTextStyle": "light",
-		"navigationBarBackgroundColor": "#000",
-		"navigationBarTitleText": "XX学校",
-		"navigationBarTextStyle": "light"
-	},
-	"tabBar": {
-		"selectedColor": "#2d8cf0",
-		"list": [
-			{
-				"pagePath": "pages/department/department",
-				"iconPath": "/image/dept.png",
-				"selectedIconPath": "/image/dept-active.png",
-				"text": "部门"
-			},
-			{
-				"pagePath": "pages/subject/subject",
-				"iconPath": "/image/subject.png",
-				"selectedIconPath": "/image/subject-active.png",
-				"text": "学科"
-			},
-			{
-				"pagePath": "pages/logs/logs",
-				"iconPath": "/image/user.png",
-				"selectedIconPath": "/image/user-active.png",
-				"text": "我"
-			}
-		]
-	}
+    "pages": [
+        "pages/login/login",
+        "pages/department/department",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/subject/subject",
+        "pages/card/card"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "XX学校",
+        "navigationBarTextStyle": "light"
+    },
+    "tabBar": {
+        "selectedColor": "#2d8cf0",
+        "list": [
+            {
+                "pagePath": "pages/department/department",
+                "iconPath": "/image/dept.png",
+                "selectedIconPath": "/image/dept-active.png",
+                "text": "部门"
+            },
+            {
+                "pagePath": "pages/subject/subject",
+                "iconPath": "/image/subject.png",
+                "selectedIconPath": "/image/subject-active.png",
+                "text": "学科"
+            },
+            {
+                "pagePath": "pages/logs/logs",
+                "iconPath": "/image/user.png",
+                "selectedIconPath": "/image/user-active.png",
+                "text": "我"
+            }
+        ]
+    }
 }

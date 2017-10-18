@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="card-container">
+        <view class="section">
+            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" />
+        </view>
+    </view>
+    <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
+        scroll-top="{{scrollTop}}">
+        <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 1}}">
+            <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
+            <view class="card-section">
+                <text class="card-name">{{card.name}}</text>
+                <text class="card-gender">{{card.gender}}</text>
+                <text class="card-phone">{{card.phone}}</text>
+            </view>
+            <view class="card-section">
+                <text class="card-deptname">{{card.deptName}}</text>
+                <text class="card-depttel">{{card.deptTel}}</text>
+            </view>
+            <view class="card-remark-section">
+                <text class="card-remark-title">备注：</text>
+                <text class="card-remark">{{card.remark}}</text>
+            </view>
+        </view>
+        <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 2}}">
+            <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
+            <view class="card-section">
+                <text class="card-name">{{card.name}}</text>
+                <text class="card-gender">{{card.gender}}</text>
+                <text class="card-phone">{{card.phone}}</text>
+            </view>
+            <view class="card-section">
+                <text class="card-depttel">{{card.subject}}</text>
+            </view>
+            <view class="card-remark-section">
+                <text class="card-remark-title">备注：</text>
+                <text class="card-remark">{{card.remark}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
