@@ -3,7 +3,8 @@
 		"pages/department/department",
 		"pages/login/login",
 		"pages/index/index",
-		"pages/logs/logs"
+		"pages/logs/logs",
+		"pages/subject/subject"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -21,13 +22,13 @@
 				"text": "部门"
 			},
 			{
-				"pagePath": "pages/department/department",
+				"pagePath": "pages/subject/subject",
 				"iconPath": "/image/subject.png",
 				"selectedIconPath": "/image/subject-active.png",
 				"text": "学科"
 			},
 			{
-				"pagePath": "pages/department/department",
+				"pagePath": "pages/logs/logs",
 				"iconPath": "/image/user.png",
 				"selectedIconPath": "/image/user-active.png",
 				"text": "我"

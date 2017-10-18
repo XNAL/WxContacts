@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="dept-container">
+    <view class="subject-container">
         <view class="section">
             <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" />            
             <button bindtap="search">搜索</button>
@@ -7,10 +7,10 @@
     </view>
     <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
         scroll-top="{{scrollTop}}">
-        <view class="scroll-view-item" wx:key="*this" wx:for="{{deptsData}}" wx:for-item="dept">
+        <view class="scroll-view-item" wx:key="*this" wx:for="{{subjectsData}}" wx:for-item="subject">
             <navigator url="/pages/login/login" hover-class="navigator-hover">
-                <text class="dept-name">{{dept.name}}</text>
-                <text class="dept-count">{{dept.count}} ></text>
+                <text class="subject-name">{{subject.name}}</text>
+                <text class="subject-count">{{subject.count}} ></text>
             </navigator>
         </view>
     </scroll-view>

@@ -1,4 +1,3 @@
-<!--pages/login/login.wxml-->
 <view class="container">
     <view class="login-container">
 		<text class="app-title">校园通讯录</text>

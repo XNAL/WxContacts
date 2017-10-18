@@ -1,4 +1,3 @@
-// pages/department/department.js
 Page({
 
 	/**
@@ -6,41 +5,41 @@ Page({
 	 */
 	data: {
 		keyword: '',
-		deptsData: [{
-			name: 'A部门',
+		subjectsData: [{
+			name: 'A学科',
 			count: 10
 		}, {
-			name: 'B部门',
+			name: 'B学科',
 			count: 20
 		}, {
-			name: 'C部门',
+			name: 'C学科',
 			count: 30
 		}, {
-			name: 'D部门',
+			name: 'D学科',
 			count: 40
 		}, {
-			name: 'E部门',
+			name: 'E学科',
 			count: 50
 		}, {
-			name: 'F部门',
+			name: 'F学科',
 			count: 60
 		}, {
-			name: 'A部门',
+			name: 'A学科',
 			count: 10
 		}, {
-			name: 'B部门',
+			name: 'B学科',
 			count: 20
 		}, {
-			name: 'C部门',
+			name: 'C学科',
 			count: 30
 		}, {
-			name: 'D部门',
+			name: 'D学科',
 			count: 40
 		}, {
-			name: 'E部门',
+			name: 'E学科',
 			count: 50
 		}, {
-			name: 'F部门',
+			name: 'F学科',
 			count: 60
 		}]
 	},
