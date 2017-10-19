@@ -1,0 +1,66 @@
+.container {
+    padding: 0;
+}
+
+.user-container {
+    position: relative;
+    width: 100%;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.mt40 {
+    margin-top: 40rpx;
+}
+.line {
+    height: 2rpx;
+    background-color: #ddd;
+    margin-top: 20rpx;
+}
+.user-container .arrow {
+	position: absolute;
+	top: 80rpx;
+	right: 28rpx;
+	width: 36rpx;
+	height: 36rpx;
+}
+.user-container image.user-logo {
+    position: absolute;
+    top: 20rpx;
+    left: 28rpx;
+    width: 160rpx;
+    height: 160rpx;
+    border: 2rpx solid #ddd;
+    border-radius: 50%;
+}
+
+.user-container .user-logo-section {
+    margin-left: 240rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.user-container .user-logo-section .user-gender {
+    margin-left: 80rpx;
+}
+.user-container .user-info-list {
+    padding-left: 28rpx;
+    box-sizing: border-box;
+}
+.user-container .user-section {
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid #eee;
+}
+
+.user-section .user-info-title {
+    display: block;
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 10rpx;
+}
+
+.user-section .user-info-content {
+    display: block;
+    font-size: 32rpx;
+    color: #333;
+}

@@ -12,12 +12,24 @@
 	"projectname": "WxContacts",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "login",
 					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "crad",
+					"pathName": "pages/card/card",
 					"query": ""
 				}
 			]

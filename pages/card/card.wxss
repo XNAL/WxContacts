@@ -1,12 +1,14 @@
 /* pages/department/department.wxss */
 .container {
-	padding: 0;
+    padding: 0;
+    background-color: #f4f4f8;
 }
 .card-container {
 	width: 100%;
+    background-color: #fff;
 }
 .card-container .section {
-	padding: 20rpx;
+	padding: 20rpx 28rpx;
 	box-sizing: border-box;
 	border-bottom: 2rpx solid #ddd;
 }
@@ -17,22 +19,30 @@
     height: 72rpx;
 	font-size: 36rpx;
     line-height: 72rpx;
-	background: #eee;
-    border: 2rpx solid #eee;
+	background: #f4f4f8;
+    border: 2rpx solid #f4f4f8;
     border-radius: 12rpx;
     box-sizing: border-box;
     text-align: center;
 }
+.container scroll-view {
+    padding-top: 20rpx;
+}
 .scroll-view-item {
     position: relative;
-    padding: 20rpx 30rpx;
-	border-bottom: 2rpx solid #eee;
-	color: #333;
+    margin: 0 0 20rpx;
+    padding: 20rpx 28rpx;
+    color: #333;
+    background-color: #fff;
+    border-width: 2rpx 0;
+    border-style: solid;
+    border-color: #ddd;
+    box-shadow: 0 8rpx 4rpx #eee;
 }
 .scroll-view-item image.card-logo {
     position:absolute;
     top: 20rpx;
-    left: 30rpx;    
+    left: 28rpx;    
 	width: 160rpx;
 	height: 160rpx;
     border: 2rpx solid #ddd;
@@ -44,7 +54,6 @@
 }
 .scroll-view-item .card-name {
     margin-left: 40rpx;
-	color: #666;
 }
 .scroll-view-item .card-gender{
     margin-left: 40rpx;

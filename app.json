@@ -5,7 +5,8 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/subject/subject",
-        "pages/card/card"
+        "pages/card/card",
+        "pages/user/user"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -29,7 +30,7 @@
                 "text": "学科"
             },
             {
-                "pagePath": "pages/logs/logs",
+                "pagePath": "pages/user/user",
                 "iconPath": "/image/user.png",
                 "selectedIconPath": "/image/user-active.png",
                 "text": "我"

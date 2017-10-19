@@ -7,9 +7,10 @@
     <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
         scroll-top="{{scrollTop}}">
         <view class="scroll-view-item" wx:key="*this" wx:for="{{deptsData}}" wx:for-item="dept">
-            <navigator url="/pages/card/card?type=1" hover-class="navigator-hover">
+            <navigator url="/pages/card/card?type=1&title={{dept.name}}" hover-class="none">
                 <text class="dept-name">{{dept.name}}</text>
-                <text class="dept-count">{{dept.count}} ></text>
+                <text class="dept-count">{{dept.count}}</text>
+                <image class="arrow" mode="aspectFit" src="/image/arrow.png"></image>   
             </navigator>
         </view>
     </scroll-view>

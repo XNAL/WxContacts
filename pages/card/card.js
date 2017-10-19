@@ -5,6 +5,10 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		isLoading: false,
+		isNoMore: false,
+		pageNum: 1,
+		pageSize: 20,
 		dataType: 1,
 		cardsData: [{
 				logo: '/image/subject.png',
@@ -66,6 +70,9 @@ Page({
 		this.setData({
 			dataType: options.type ? parseInt(options.type) : 1
 		})
+		wx.setNavigationBarTitle({
+			title: options.title
+		})
 	},
 
 	/**
@@ -115,5 +122,45 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	loadMore: function (e) {
+		if (!this.data.isNoMore) {
+			// let that = this;
+			this.setData({
+				isLoading: true,
+				pageNum: this.data.pageNum + 1
+			});
+			// this.fetchCardList();
+			console.log(this.data.pageNum)
+		}
+	},
+	fetchCardList: function () {
+		let that = this;
+		let url = 'http://&pagenum=' + this.data.pageNum;
+		wx.request({
+			url: 'https://URL',
+			data: {},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function(res){
+				// success
+				let isHasMore = false;
+				if(res.data.result.list.length < that.data.pageSize) {
+					isHasMore = true;
+				}
+				that.setData({
+					cardsData: that.data.cardsData.concat(res.data.result.list),
+					isLoading: false,
+					isNoMore: isHasMore
+				});
+			},
+			fail: function() {
+				// fail
+			},
+			complete: function() {
+				// complete
+			}
+		});
 	}
 })
