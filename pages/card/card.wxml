@@ -1,10 +1,10 @@
 <view class="container">
     <view class="card-container">
         <view class="section">
-            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" />
+            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索"/>
         </view>
     </view>
-    <scroll-view scroll-y="true" bindscrolltolower="loadMore"  bindscrolltoupper="loadMore">
+    <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="loadMore">
         <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 1}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
@@ -36,7 +36,8 @@
                 <text class="card-remark">{{card.remark}}</text>
             </view>
         </view>
-        <view class="loading" hidden="{{!isLoading}}">正在加载更多...</view>
+        <!-- <view class="loading" hidden="{{!isLoading}}">正在加载更多...</view> -->
+        <view class="loading" hidden="{{!isLoading}}">努力加载中...</view>
         <view class="loading no-more" hidden="{{!isNoMore}}">没有更多了</view>
     </scroll-view>
 </view>

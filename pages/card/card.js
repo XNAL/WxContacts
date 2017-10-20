@@ -114,7 +114,45 @@ Page({
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-
+		if (!this.data.isNoMore) {
+			// let that = this;
+			this.setData({
+				isLoading: true,
+				pageNum: this.data.pageNum + 1
+			});
+			// this.fetchCardList();
+			console.log(this.data.pageNum);
+			setTimeout(() => {
+				let isHasMore = false;
+				if(this.data.pageNum > 5) {
+					isHasMore = true;
+				}
+				this.setData({
+					cardsData: this.data.cardsData.concat([{
+						logo: '/image/subject.png',
+						name: '张三' + this.data.pageNum,
+						gender: '男',
+						phone: '13245623232',
+						subject: '高等数学',
+						deptName: '校长办公室',
+						deptTel: '0755-889556',
+						remark: '有事电话联系。'
+					},
+					{
+						logo: '',
+						name: '李四四' + this.data.pageNum,
+						gender: '女',
+						phone: '15689623232',
+						subject: '编译原理',
+						deptName: '计算机学院',
+						deptTel: '0755-889963',
+						remark: '有事电话联系。'
+					}]),
+					isLoading: false,
+					isNoMore: isHasMore
+				});
+			}, 1000);
+		}
 	},
 
 	/**
@@ -125,6 +163,7 @@ Page({
 	},
 
 	loadMore: function (e) {
+		console.log(1);
 		if (!this.data.isNoMore) {
 			// let that = this;
 			this.setData({
@@ -133,6 +172,7 @@ Page({
 			});
 			// this.fetchCardList();
 			console.log(this.data.pageNum)
+			
 		}
 	},
 	fetchCardList: function () {

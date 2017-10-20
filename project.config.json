@@ -27,10 +27,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "crad",
 					"pathName": "pages/card/card",
-					"query": ""
+					"query": "type=2&title=A学科"
 				}
 			]
 		},

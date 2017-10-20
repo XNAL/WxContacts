@@ -5,7 +5,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		userName: '',
+		userID: '',
 		password: '',
 		isError: false,
 		errorText: ''
@@ -70,9 +70,9 @@ Page({
 	/**
 	 * 输入手机号（用户名）
 	 */
-	bindUserNameInput: function(e) {
+	bindUserIDInput: function(e) {
 		this.setData({
-			userName: e.detail.value
+			userID: e.detail.value
 		});
 	},
 
@@ -89,7 +89,7 @@ Page({
 	 * 点击登录按钮
 	 */
 	login: function (e) {
-		if(this.data.userName === '' || this.data.password === '') {
+		if(this.data.userID === '' || this.data.password === '') {
 			this.setData({
 				isError: true,
 				errorText: "手机号或密码不能为空"
@@ -101,9 +101,7 @@ Page({
 			errorText: "请输入正确的手机号或密码"
 		});
 		// console.log(this.data.userName, this.data.password);
-		wx.setStorageSync('userInfo', {
-			userName: this.data.userName
-		});
+		wx.setStorageSync('USERID', this.data.userID);
 		
 		wx.switchTab({
 			url: "/pages/department/department"

@@ -1,33 +1,39 @@
 /* pages/department/department.wxss */
+
 .container {
     padding: 0;
     background-color: #f4f4f8;
 }
+
 .card-container {
-	width: 100%;
+    width: 100%;
     background-color: #fff;
 }
+
 .card-container .section {
-	padding: 20rpx 28rpx;
-	box-sizing: border-box;
-	border-bottom: 2rpx solid #ddd;
+    padding: 20rpx 28rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #ddd;
 }
+
 .card-container .section input {
     padding: 0 28rpx;
     margin-right: 160rpx;
     width: 100%;
     height: 72rpx;
-	font-size: 36rpx;
+    font-size: 36rpx;
     line-height: 72rpx;
-	background: #f4f4f8;
+    background: #f4f4f8;
     border: 2rpx solid #f4f4f8;
     border-radius: 12rpx;
     box-sizing: border-box;
     text-align: center;
 }
+
 .container scroll-view {
     padding-top: 20rpx;
 }
+
 .scroll-view-item {
     position: relative;
     margin: 0 0 20rpx;
@@ -39,37 +45,56 @@
     border-color: #ddd;
     box-shadow: 0 8rpx 4rpx #eee;
 }
+
 .scroll-view-item image.card-logo {
-    position:absolute;
+    position: absolute;
     top: 20rpx;
-    left: 28rpx;    
-	width: 160rpx;
-	height: 160rpx;
+    left: 28rpx;
+    width: 160rpx;
+    height: 160rpx;
     border: 2rpx solid #ddd;
     border-radius: 50%;
 }
+
 .scroll-view-item .card-section {
     margin-left: 160rpx;
     line-height: 80rpx;
 }
+
 .scroll-view-item .card-name {
     margin-left: 40rpx;
 }
-.scroll-view-item .card-gender{
+
+.scroll-view-item .card-gender {
     margin-left: 40rpx;
 }
-.scroll-view-item .card-phone{
+
+.scroll-view-item .card-phone {
     margin-left: 40rpx;
 }
-.scroll-view-item .card-deptname{
+
+.scroll-view-item .card-deptname {
     margin-left: 40rpx;
 }
-.scroll-view-item .card-depttel{
+
+.scroll-view-item .card-depttel {
     margin-left: 40rpx;
 }
+
 .card-remark-section {
     margin-top: 20rpx;
 }
+
 .card-remark-title {
     color: #999;
+}
+
+
+/*  加载更多   */
+
+.loading {
+    margin: 30rpx auto;
+    font-size: 28rpx;
+    text-align: center;
+    color: #666;
 }

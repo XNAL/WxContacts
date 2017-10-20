@@ -1,7 +1,7 @@
 <view class="container">
     <view class="dept-container">
         <view class="section">
-            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" />            
+            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索"/>            
         </view>
     </view>
     <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"

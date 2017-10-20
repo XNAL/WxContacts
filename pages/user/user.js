@@ -13,6 +13,7 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
+			userid: wx.getStorageSync('userid'),
 			user: {
 				logo: '',
 				name: '张三',

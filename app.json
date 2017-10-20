@@ -1,40 +1,41 @@
 {
-    "pages": [
-        "pages/login/login",
-        "pages/department/department",
-        "pages/index/index",
-        "pages/logs/logs",
-        "pages/subject/subject",
-        "pages/card/card",
-        "pages/user/user"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "XX学校",
-        "navigationBarTextStyle": "light"
-    },
-    "tabBar": {
-        "selectedColor": "#2d8cf0",
-        "list": [
-            {
-                "pagePath": "pages/department/department",
-                "iconPath": "/image/dept.png",
-                "selectedIconPath": "/image/dept-active.png",
-                "text": "部门"
-            },
-            {
-                "pagePath": "pages/subject/subject",
-                "iconPath": "/image/subject.png",
-                "selectedIconPath": "/image/subject-active.png",
-                "text": "学科"
-            },
-            {
-                "pagePath": "pages/user/user",
-                "iconPath": "/image/user.png",
-                "selectedIconPath": "/image/user-active.png",
-                "text": "我"
-            }
-        ]
-    }
+  "pages": [
+    "pages/login/login",
+    "pages/department/department",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/subject/subject",
+    "pages/card/card",
+    "pages/user/user",
+    "pages/update/update"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "XX学校",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#2d8cf0",
+    "list": [
+      {
+        "pagePath": "pages/department/department",
+        "iconPath": "/image/dept.png",
+        "selectedIconPath": "/image/dept-active.png",
+        "text": "部门"
+      },
+      {
+        "pagePath": "pages/subject/subject",
+        "iconPath": "/image/subject.png",
+        "selectedIconPath": "/image/subject-active.png",
+        "text": "学科"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/image/user.png",
+        "selectedIconPath": "/image/user-active.png",
+        "text": "我"
+      }
+    ]
+  }
 }
