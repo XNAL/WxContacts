@@ -40,7 +40,7 @@
     height: 72rpx;
     padding: 0;
     margin: 10rpx auto 0;
-    font-size: 28rpx;
+    font-size: 36rpx;
     color: #fff;
     line-height: 68rpx;
     box-sizing: border-box;

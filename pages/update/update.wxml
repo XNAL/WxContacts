@@ -19,20 +19,18 @@
             </view>
             <view class="update-section">
                 <label for="deptname_id">部门</label>
-                <input id="deptname_id" type="number" value="{{update.deptName}}" placeholder="部门" />
-            </view>
-            <view class="update-section">
-                <label for="depttel_id">部门电话</label>
-                <input id="depttel_id" type="number" value="{{update.depttTel}}" placeholder="部门电话" />
+                <picker bindchange="bindDeptPickerChange" value="{{deptIndex}}" range="{{deptArray}}">
+                    <view class="picker">{{deptArray[deptIndex]}}</view>
+                </picker>
             </view>
             <view class="update-section">
                 <label for="subject_id">所教学科</label>
-                <input id="subject_id" type="number" value="{{update.subject}}" placeholder="所教学科" />
-            </view>
-            <view class="update-section">
-                <label for="remark_id">备注</label>
-                <input id="remark_id" type="number" value="{{update.remark}}" placeholder="备注" />
+                <picker bindchange="bindSubjectPickerChange" value="{{subjectIndex}}" range="{{subjectArray}}">
+                    <view class="picker">{{subjectArray[subjectIndex]}}</view>
+                </picker>
             </view>
         </form>
+
+        <button class="btn-update" bindtap="confirmUpdate">确定修改</button>
     </view>
 </view>

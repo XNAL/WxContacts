@@ -10,11 +10,11 @@
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>
                 <text class="card-gender">{{card.gender}}</text>
-                <text class="card-phone">{{card.phone}}</text>
+                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
             </view>
             <view class="card-section">
                 <text class="card-deptname">{{card.deptName}}</text>
-                <text class="card-depttel">{{card.deptTel}}</text>
+                <text class="card-depttel" data-phone="{{card.deptTel}}" bindtap="callPhone">{{card.deptTel}}</text>
             </view>
             <view class="card-remark-section">
                 <text class="card-remark-title">备注：</text>
@@ -26,7 +26,7 @@
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>
                 <text class="card-gender">{{card.gender}}</text>
-                <text class="card-phone">{{card.phone}}</text>
+                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
             </view>
             <view class="card-section">
                 <text class="card-depttel">{{card.subject}}</text>

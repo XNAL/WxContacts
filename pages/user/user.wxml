@@ -19,7 +19,7 @@
             </view>
             <view class="user-section">
                 <text class="user-info-title">部门电话</text>
-                <text class="user-info-content user-depttel">{{user.deptTel}}</text>
+                <text class="user-info-content user-depttel" data-phone="{{user.deptTel}}" bindtap="callPhone">{{user.deptTel}}</text>
             </view>
             <view class="user-section">
                 <text class="user-info-title">所教学科</text>

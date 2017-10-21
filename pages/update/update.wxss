@@ -1,1 +1,91 @@
-/* pages/update/update.wxss */
+.container {
+    padding: 0;
+}
+
+.update-container {
+    width: 100%;
+    padding: 28rpx 28rpx 0;
+    box-sizing: border-box;
+}
+
+.update-form {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-top: 180rpx;
+}
+
+.update-form .update-logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160rpx;
+    height: 160rpx;
+    border: 2rpx solid #ddd;
+    border-radius: 50%;
+}
+
+.update-section {
+    position: relative;
+    padding: 10rpx 0;
+}
+
+.update-section label {
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+    font-size: 36rpx;
+    line-height: 72rpx;
+    color: #666;
+}
+
+.update-section input,
+.update-section radio-group,
+.update-section picker {
+    height: 72rpx;
+    font-size: 36rpx;
+    line-height: 72rpx;
+    color: #333;
+    border-bottom: 2rpx solid #eee;
+    text-align: right;
+}
+
+.update-section radio-group radio {
+    margin-left: 40rpx;
+}
+
+.remark-section {
+    padding-left: 100rpx;
+}
+
+.remark-section label {
+    top: 70rpx;
+}
+
+.update-section textarea {
+    width: 100%;
+    height: 200rpx;
+    border: 2rpx solid #eee;
+    box-sizing: border-box;
+}
+
+.btn-update {
+    width: 80%;
+    height: 72rpx;
+    padding: 0;
+    margin: 80rpx auto 0;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 68rpx;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20rpx;
+    background: #2d8cf0;
+    cursor: pointer;
+}
+
+.wx-radio-input {
+    width: 36rpx !important;
+    height: 36rpx !important;
+}
