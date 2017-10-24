@@ -1,5 +1,5 @@
 const filter = require('../../utils/filter');
-
+const app = getApp();
 Page(filter.loginCheck({
 
 	/**
@@ -16,7 +16,7 @@ Page(filter.loginCheck({
 	onLoad: function (options) {
 		let that = this;
 		wx.request({
-			url: 'http://localhost:8000/contact/getSubjects',
+			url: `${app.globalData.apiUrl}/getSubjects`,
 			data: {},
 			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 			// header: {}, // 设置请求的 header
@@ -51,5 +51,8 @@ Page(filter.loginCheck({
 	 */
 	search: function (e) {
 		console.log(this.data.keyword);
+		wx.redirectTo({
+			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
+		})
 	}
 }))

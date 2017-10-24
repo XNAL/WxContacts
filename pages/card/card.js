@@ -1,10 +1,11 @@
-// pages/card/card.js
+const app = getApp();
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		keyword: '',
 		isLoading: false,
 		isNoMore: false,
 		page: 1,
@@ -37,7 +38,7 @@ Page({
 				isLoading: true,
 				page: this.data.page + 1
 			});
-			this.fetchCardList();			
+			this.fetchCardList();
 		}
 	},
 	callPhone: function (e) {
@@ -47,16 +48,20 @@ Page({
 	},
 
 	fetchCardList: function () {
-		let url = 'http://localhost:8000/contact/',
+		let api = app.globalData.apiUrl,
+			url = '',
 			that = this;
 		if (this.data.dataType === 1) {
-			url += 'getContactsByDeptID';
+			url = `${api}/getContactsByDeptID/${that.data.dataId}`;
 		}
 		if (this.data.dataType === 2) {
-			url += 'getContactsBySubjectID';
+			url = `${api}/getContactsBySubjectID/${that.data.dataId}`;
+		}
+		if (this.data.dataType === 3) {
+			url = `${api}/searchByKeyword/${that.data.keyword}`;
 		}
 		wx.request({
-			url: `${url}/${that.data.dataId}?page=${that.data.page}`,
+			url: `${url}?page=${that.data.page}`,
 			data: {},
 			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 			// header: {}, // 设置请求的 header
@@ -81,5 +86,24 @@ Page({
 				// complete
 			}
 		});
+	},
+
+	/**
+	 * 输入关键字
+	 */
+	bindKeywordInput: function (e) {
+		this.setData({
+			keyword: e.detail.value
+		});
+	},
+
+	/**
+	 * 搜索
+	 */
+	search: function (e) {
+		console.log(this.data.keyword);
+		wx.redirectTo({
+			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
+		})
 	}
 })

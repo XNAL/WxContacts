@@ -1,7 +1,7 @@
 <view class="container">
     <view class="card-container">
         <view class="section">
-            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索"/>
+            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索" bindconfirm="search"/>
         </view>
     </view>
     <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="loadMore">

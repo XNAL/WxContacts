@@ -1,4 +1,4 @@
-// pages/department/department.js
+const app = getApp();
 Page({
 
 	/**
@@ -15,7 +15,7 @@ Page({
 	onLoad: function (options) {
 		let that = this;
 		wx.request({
-			url: 'http://localhost:8000/contact/getDepts',
+			url: `${app.globalData.apiUrl}/getDepts`,
 			data: {},
 			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 			// header: {}, // 设置请求的 header
@@ -50,5 +50,8 @@ Page({
 	 */
 	search: function (e) {
 		console.log(this.data.keyword);
+		wx.redirectTo({
+			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
+		})
 	}
 })

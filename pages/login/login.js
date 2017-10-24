@@ -1,4 +1,4 @@
-// pages/login/login.js
+const app = getApp();
 Page({
 
 	/**
@@ -53,7 +53,7 @@ Page({
 		// });
 		let that = this;
 		wx.request({
-			url: 'http://localhost:8000/contact/login',
+			url: `${app.globalData.apiUrl}/login`,
 			data: {
 				userID: this.data.userID,
 				password: this.data.password
@@ -67,6 +67,11 @@ Page({
 
 					wx.switchTab({
 						url: "/pages/department/department"
+					});
+				} else {
+					that.setData({
+						isError: true,
+						errorText: "请输入正确的手机号或密码"
 					});
 				}
 			},

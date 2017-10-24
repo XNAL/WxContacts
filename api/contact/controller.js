@@ -134,18 +134,45 @@ exports.getContactsBySubjectID = async(ctx) => {
     }
 }
 
+/*
+ * 根据关键字搜索
+ */
+exports.searchByKeyword = async(ctx) => {
+    let keyword = ctx.params.keyword || '',
+        page = ctx.request.query.page ? parseInt(ctx.request.query.page) : 1,
+        pageNum = ctx.request.query.pageNum || 20,
+        pageIndex = (page - 1) * pageNum,
+        sql = ` select a.name, a.gender, a.phone, b.name as deptName, b.tel as deptTel, c.name as subject 
+                from contact_user a left join contact_dept b on a.deptId = b.id left join contact_subject c 
+                on a.subjectId = c.id where a.name like '%${keyword}%' or a.phone like '%${keyword}%' 
+                or b.name like '%${keyword}%' or b.tel like '%${keyword}%' or c.name like '%${keyword}%' limit ?, ?`;
+    try {
+        let result = await ctx.execSql(sql, [pageIndex, pageNum]);
+        ctx.body = {
+            success: true,
+            data: result,
+            message: ''
+        };
+    } catch (err) {
+        ctx.body = {
+            success: false,
+            data: [],
+            message: err
+        };
+    }
+}
 
 /*
  * 获取我的信息
  */
-exports.getContactByPhone = async(ctx) => {
+exports.getContactByID = async(ctx) => {
     let userID = ctx.params.userID || '';
     let sql = ` select a.name, a.gender, a.phone, b.name as deptName, b.tel as deptTel, c.name as subject 
                 from contact_user a left join contact_dept b on a.deptId = b.id 
                 left join contact_subject c on a.subjectId = c.id where a.phone = ?`;
     try {
         let result = await ctx.execSql(sql, userID);
-        if(result.length > 0) {
+        if (result.length > 0) {
             ctx.body = {
                 success: true,
                 data: result[0],
@@ -167,3 +194,69 @@ exports.getContactByPhone = async(ctx) => {
     }
 }
 
+/*
+ * 编辑我的信息
+ */
+exports.getContactWhenUpdate = async(ctx) => {
+    let userID = ctx.params.userID || '';
+    let sql = ` select a.name, a.gender, a.phone, b.name as deptName, b.tel as deptTel, c.name as subject 
+                from contact_user a left join contact_dept b on a.deptId = b.id 
+                left join contact_subject c on a.subjectId = c.id where a.phone = ?`;
+    try {
+        let result = await ctx.execSql(sql, userID);
+        let deptResult = await ctx.execSql('select id, name from contact_dept');
+        let subjectResult = await ctx.execSql('select id, name from contact_subject');
+        if (result.length > 0) {
+            ctx.body = {
+                success: true,
+                data: result[0],
+                depts: deptResult || [],
+                subjects: subjectResult || [],
+                message: ''
+            };
+        } else {
+            ctx.body = {
+                success: true,
+                data: null,
+                depts: [],
+                subjects: [],
+                message: ''
+            };
+        }
+    } catch (err) {
+        ctx.body = {
+            success: false,
+            data: null,
+            depts: [],
+            subjects: [],
+            message: err
+        };
+    }
+}
+
+
+/*
+ * 更新我的信息
+ */
+exports.updateContact = async(ctx) => {
+    let userID = ctx.params.userID || '',
+        data = {
+            name = ctx.request.body.name,
+            gender = ctx.request.body.gender || 1,
+            phone = ctx.request.body.phone,
+            deptID = ctx.request.body.deptID || 0,
+            subjectID = ctx.request.body.subjectID || 0
+        };
+    try {
+        let result = await ctx.execSql('update contact_user set ? where phone = ?', [data, userID]);
+        ctx.body = {
+            success: true,
+            message: ''
+        };
+    } catch (err) {
+        ctx.body = {
+            success: false,
+            message: err
+        };
+    }
+}
