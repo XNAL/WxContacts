@@ -14,44 +14,26 @@ Page(filter.loginCheck({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.setData({
-			subjectsData: [{
-				name: 'A学科',
-				count: 10
-			}, {
-				name: 'B学科',
-				count: 20
-			}, {
-				name: 'C学科',
-				count: 30
-			}, {
-				name: 'D学科',
-				count: 40
-			}, {
-				name: 'E学科',
-				count: 50
-			}, {
-				name: 'F学科',
-				count: 60
-			}, {
-				name: 'A学科',
-				count: 10
-			}, {
-				name: 'B学科',
-				count: 20
-			}, {
-				name: 'C学科',
-				count: 30
-			}, {
-				name: 'D学科',
-				count: 40
-			}, {
-				name: 'E学科',
-				count: 50
-			}, {
-				name: 'F学科',
-				count: 60
-			}]
+		let that = this;
+		wx.request({
+			url: 'http://localhost:8000/contact/getSubjects',
+			data: {},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				// success
+				if (res.data.success) {
+					that.setData({
+						subjectsData: res.data.data
+					})
+				}
+			},
+			fail: function () {
+				// fail
+			},
+			complete: function () {
+				// complete
+			}
 		})
 	},
 

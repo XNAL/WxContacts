@@ -2,7 +2,7 @@ function loginCheck(pageObj) {
 	if (pageObj.onLoad) {
 		let _onLoad = pageObj.onLoad;
 		pageObj.onLoad = function () {
-			if(wx.getStorageSync('userInfo')) {
+			if(wx.getStorageSync('USERID')) {
 				//获取页面实例，防止this劫持
 				let currentInstance = getPageInstance();
 				_onLoad.call(currentInstance);

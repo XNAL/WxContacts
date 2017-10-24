@@ -5,6 +5,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		userID: '',
 		user: {}
 	},
 
@@ -13,21 +14,32 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
-			userid: wx.getStorageSync('userid'),
-			user: {
-				logo: '',
-				name: '张三',
-				gender: '男',
-				phone: '13256895478',
-				deptName: '计算机学院',
-				deptTel: '0755-12457896',
-				subject: '高等数学',
-				remark: '有事电话联系。'
+			userID: wx.getStorageSync('USERID')
+		});
+		let that = this;
+		wx.request({
+			url: `http://localhost:8000/contact/getContactByPhone/${that.data.userID}`,
+			data: {},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				// success
+				if (res.data.success) {
+					that.setData({
+						user: res.data.data
+					})
+				}
+			},
+			fail: function () {
+				// fail
+			},
+			complete: function () {
+				// complete
 			}
 		})
 	},
 
-	callPhone: function(e) {
+	callPhone: function (e) {
 		wx.makePhoneCall({
 			phoneNumber: e.currentTarget.dataset.phone
 		})
@@ -37,7 +49,7 @@ Page({
 	 */
 	onShareAppMessage: function () {
 		return {
-			title: '张三的名片'
+			title: `${this.data.user.name}的名片`
 		}
 	}
 })

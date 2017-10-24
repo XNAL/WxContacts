@@ -1,0 +1,27 @@
+{
+  "name": "wxcontacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XNAL/WxContacts.git"
+  },
+  "author": "Don",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XNAL/WxContacts/issues"
+  },
+  "homepage": "https://github.com/XNAL/WxContacts#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.2.1",
+    "mysql": "^2.15.0"
+  }
+}

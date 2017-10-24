@@ -6,7 +6,7 @@
                 <input name="userID" type="number" bindinput="bindUserIDInput" placeholder="手机号码" />
             </view>
             <view class="section">
-                <input name="password" bindinput="bindPasswordInput" type="password" placeholder="密码" />
+                <input name="password" bindinput="bindPasswordInput" type="password" password="true" placeholder="密码" />
             </view>
 			<text class="{{ isError ? 'error' : ''}}">{{errorText}}</text>
         </form>

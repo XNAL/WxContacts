@@ -6,50 +6,34 @@ Page({
 	 */
 	data: {
 		keyword: '',
-		deptsData: [{
-			name: 'A部门',
-			count: 10
-		}, {
-			name: 'B部门',
-			count: 20
-		}, {
-			name: 'C部门',
-			count: 30
-		}, {
-			name: 'D部门',
-			count: 40
-		}, {
-			name: 'E部门',
-			count: 50
-		}, {
-			name: 'F部门',
-			count: 60
-		}, {
-			name: 'A部门',
-			count: 10
-		}, {
-			name: 'B部门',
-			count: 20
-		}, {
-			name: 'C部门',
-			count: 30
-		}, {
-			name: 'D部门',
-			count: 40
-		}, {
-			name: 'E部门',
-			count: 50
-		}, {
-			name: 'F部门',
-			count: 60
-		}]
+		deptsData: []
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		let that = this;
+		wx.request({
+			url: 'http://localhost:8000/contact/getDepts',
+			data: {},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				// success
+				if (res.data.success) {
+					that.setData({
+						deptsData: res.data.data
+					})
+				}
+			},
+			fail: function () {
+				// fail
+			},
+			complete: function () {
+				// complete
+			}
+		})
 	},
 
 	/**

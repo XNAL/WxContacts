@@ -1,13 +1,13 @@
 <view class="container">
     <view class="dept-container">
         <view class="section">
-            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索"/>            
+            <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索" bindconfirm="search"/>            
         </view>
     </view>
     <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
         scroll-top="{{scrollTop}}">
         <view class="scroll-view-item" wx:key="*this" wx:for="{{deptsData}}" wx:for-item="dept">
-            <navigator url="/pages/card/card?type=1&title={{dept.name}}" hover-class="none">
+            <navigator url="/pages/card/card?type=1&id={{dept.id}}&title={{dept.name}}" hover-class="none">
                 <text class="dept-name">{{dept.name}}</text>
                 <text class="dept-count">{{dept.count}}</text>
                 <image class="arrow" mode="aspectFit" src="/image/arrow.png"></image>   

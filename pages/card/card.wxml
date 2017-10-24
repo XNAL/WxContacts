@@ -16,10 +16,10 @@
                 <text class="card-deptname">{{card.deptName}}</text>
                 <text class="card-depttel" data-phone="{{card.deptTel}}" bindtap="callPhone">{{card.deptTel}}</text>
             </view>
-            <view class="card-remark-section">
+            <!-- <view class="card-remark-section">
                 <text class="card-remark-title">备注：</text>
                 <text class="card-remark">{{card.remark}}</text>
-            </view>
+            </view> -->
         </view>
         <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 2}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
@@ -31,10 +31,10 @@
             <view class="card-section">
                 <text class="card-depttel">{{card.subject}}</text>
             </view>
-            <view class="card-remark-section">
+            <!-- <view class="card-remark-section">
                 <text class="card-remark-title">备注：</text>
                 <text class="card-remark">{{card.remark}}</text>
-            </view>
+            </view> -->
         </view>
         <!-- <view class="loading" hidden="{{!isLoading}}">正在加载更多...</view> -->
         <view class="loading" hidden="{{!isLoading}}">努力加载中...</view>
