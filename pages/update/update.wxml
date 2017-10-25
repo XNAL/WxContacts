@@ -4,29 +4,29 @@
             <image class="update-logo" mode="aspectFit" src="/image/user.png"></image>
             <view class="update-section">
                 <label for="name_id">姓名</label>
-                <input id="name_id" type="text" value="{{update.name}}" placeholder="姓名" />
+                <input id="name_id" type="text" value="{{update.name}}" placeholder="姓名" bindinput="bindNameInput" />
             </view>
             <view class="update-section">
                 <label for="gender_id">性别</label>
                 <radio-group id="gender_id" class="radio-group" bindchange="genderChange">
-                    <radio value="男" checked="{{update.gender !== '女' ? true: false}}" />男
-                    <radio value="女" checked="{{update.gender === '女' ? true: false}}" />女
+                    <radio value="1" checked="{{update.gender !== '2' ? true: false}}" />男
+                    <radio value="2" checked="{{update.gender === '2' ? true: false}}" />女
                 </radio-group>
             </view>
             <view class="update-section">
                 <label for="phone_id">手机号码</label>
-                <input id="phone_id" type="number" value="{{update.phone}}" placeholder="手机号码" />
+                <input id="phone_id" type="number" value="{{update.phone}}" placeholder="手机号码" bindinput="bindPhoneInput"/>
             </view>
             <view class="update-section">
                 <label for="deptname_id">部门</label>
-                <picker bindchange="bindDeptPickerChange" value="{{deptIndex}}" range="{{deptArray}}">
-                    <view class="picker">{{deptArray[deptIndex]}}</view>
+                <picker bindchange="bindDeptPickerChange" value="{{deptIndex}}" range="{{deptArray}}" range-key="{{'name'}}">
+                    <view class="picker">{{deptArray[deptIndex].name}}</view>
                 </picker>
             </view>
             <view class="update-section">
                 <label for="subject_id">所教学科</label>
-                <picker bindchange="bindSubjectPickerChange" value="{{subjectIndex}}" range="{{subjectArray}}">
-                    <view class="picker">{{subjectArray[subjectIndex]}}</view>
+                <picker bindchange="bindSubjectPickerChange" value="{{subjectIndex}}" range="{{subjectArray}}" range-key="{{'name'}}">
+                    <view class="picker">{{subjectArray[subjectIndex].name}}</view>
                 </picker>
             </view>
         </form>

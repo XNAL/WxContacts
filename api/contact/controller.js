@@ -147,6 +147,7 @@ exports.searchByKeyword = async(ctx) => {
                 on a.subjectId = c.id where a.name like '%${keyword}%' or a.phone like '%${keyword}%' 
                 or b.name like '%${keyword}%' or b.tel like '%${keyword}%' or c.name like '%${keyword}%' limit ?, ?`;
     try {
+        console.log('sql', sql);
         let result = await ctx.execSql(sql, [pageIndex, pageNum]);
         ctx.body = {
             success: true,
@@ -199,7 +200,8 @@ exports.getContactByID = async(ctx) => {
  */
 exports.getContactWhenUpdate = async(ctx) => {
     let userID = ctx.params.userID || '';
-    let sql = ` select a.name, a.gender, a.phone, b.name as deptName, b.tel as deptTel, c.name as subject 
+    let sql = ` select a.name, a.gender, a.phone, b.id as deptId,b.name as deptName, 
+                b.tel as deptTel, c.id as subjectId, c.name as subject 
                 from contact_user a left join contact_dept b on a.deptId = b.id 
                 left join contact_subject c on a.subjectId = c.id where a.phone = ?`;
     try {
@@ -241,11 +243,11 @@ exports.getContactWhenUpdate = async(ctx) => {
 exports.updateContact = async(ctx) => {
     let userID = ctx.params.userID || '',
         data = {
-            name = ctx.request.body.name,
-            gender = ctx.request.body.gender || 1,
-            phone = ctx.request.body.phone,
-            deptID = ctx.request.body.deptID || 0,
-            subjectID = ctx.request.body.subjectID || 0
+            name: ctx.request.body.name,
+            gender: ctx.request.body.gender || 1,
+            phone: ctx.request.body.phone,
+            deptID: ctx.request.body.deptID || 0,
+            subjectID: ctx.request.body.subjectID || 0
         };
     try {
         let result = await ctx.execSql('update contact_user set ? where phone = ?', [data, userID]);

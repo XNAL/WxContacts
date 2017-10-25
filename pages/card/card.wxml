@@ -5,7 +5,7 @@
         </view>
     </view>
     <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="loadMore">
-        <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 1}}">
+        <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 1 || dataType === 3}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>

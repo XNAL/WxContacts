@@ -19,12 +19,15 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		let type = options.type ? parseInt(options.type) : 1,
+			keyword = type === 3 ? options.title : '';
 		this.setData({
-			dataType: options.type ? parseInt(options.type) : 1,
-			dataId: options.id ? parseInt(options.id) : 0
+			dataType: type,
+			dataId: options.id ? parseInt(options.id) : 0,
+			keyword: keyword
 		});
 		wx.setNavigationBarTitle({
-			title: options.title
+			title: type === 3 ? `${keyword}的搜索结果` : options.title
 		});
 		this.fetchCardList();
 	},

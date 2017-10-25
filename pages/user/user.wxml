@@ -2,7 +2,7 @@
     <view class="user-container">
         <image class="arrow" mode="aspectFit" src="/image/arrow.png"></image>
         <image class="user-logo" mode="aspectFit" src="{{user.logo ? user.logo : '/image/user.png'}}"></image>
-        <navigator url="/pages/update/update?userid={{userid}}" hover-class="none">
+        <navigator url="/pages/update/update?userid={{userID}}" hover-class="none">
             <view class="user-logo-section">
                 <text class="user-info-content user-name">{{user.name}}</text>
                 <text class="user-info-content user-gender">{{user.gender}}</text>

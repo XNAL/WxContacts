@@ -1,4 +1,4 @@
-// pages/user/user.js
+const app = getApp();
 Page({
 
 	/**
@@ -18,7 +18,7 @@ Page({
 		});
 		let that = this;
 		wx.request({
-			url: `http://localhost:8000/contact/getContactByPhone/${that.data.userID}`,
+			url: `${app.globalData.apiUrl}/getContactByID/${that.data.userID}`,
 			data: {},
 			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 			// header: {}, // 设置请求的 header
