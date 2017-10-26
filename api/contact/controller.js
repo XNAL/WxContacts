@@ -2,31 +2,34 @@
  * 登录
  */
 exports.Login = async(ctx) => {
-    let userId = ctx.request.body.userID || '';
+    let phone = ctx.request.body.phone || '';
     let psd = ctx.request.body.password || '';
-    if (!userId || !psd) {
+    if (!phone || !psd) {
         ctx.body = {
             success: false,
-            message: '账号或密码不能为空'
+            message: '手机号码或密码不能为空'
         };
         return false;
     }
     try {
-        let result = await ctx.execSql(`select * from contact_user where phone = ? and password = ?`, [userId, psd]);
+        let result = await ctx.execSql(`select * from contact_user where phone = ? and password = ?`, [phone, psd]);
         if (result.length > 0) {
             ctx.body = {
                 success: true,
+                userID: result[0].id,
                 message: ''
             };
         } else {
             ctx.body = {
                 success: false,
+                userID: 0,
                 message: '账号或密码错误'
             };
         }
     } catch (err) {
         ctx.body = {
             success: false,
+            userID: 0,
             message: err
         };
     }
@@ -167,10 +170,10 @@ exports.searchByKeyword = async(ctx) => {
  * 获取我的信息
  */
 exports.getContactByID = async(ctx) => {
-    let userID = ctx.params.userID || '';
+    let userID = ctx.params.userID || 0;
     let sql = ` select a.name, a.gender, a.phone, b.name as deptName, b.tel as deptTel, c.name as subject 
                 from contact_user a left join contact_dept b on a.deptId = b.id 
-                left join contact_subject c on a.subjectId = c.id where a.phone = ?`;
+                left join contact_subject c on a.subjectId = c.id where a.id = ?`;
     try {
         let result = await ctx.execSql(sql, userID);
         if (result.length > 0) {
@@ -199,11 +202,11 @@ exports.getContactByID = async(ctx) => {
  * 编辑我的信息
  */
 exports.getContactWhenUpdate = async(ctx) => {
-    let userID = ctx.params.userID || '';
+    let userID = ctx.params.userID || 0;
     let sql = ` select a.name, a.gender, a.phone, b.id as deptId,b.name as deptName, 
                 b.tel as deptTel, c.id as subjectId, c.name as subject 
                 from contact_user a left join contact_dept b on a.deptId = b.id 
-                left join contact_subject c on a.subjectId = c.id where a.phone = ?`;
+                left join contact_subject c on a.subjectId = c.id where a.id = ?`;
     try {
         let result = await ctx.execSql(sql, userID);
         let deptResult = await ctx.execSql('select id, name from contact_dept');
@@ -241,7 +244,7 @@ exports.getContactWhenUpdate = async(ctx) => {
  * 更新我的信息
  */
 exports.updateContact = async(ctx) => {
-    let userID = ctx.params.userID || '',
+    let userID = ctx.params.userID || 0,
         data = {
             name: ctx.request.body.name,
             gender: ctx.request.body.gender || 1,
@@ -250,7 +253,7 @@ exports.updateContact = async(ctx) => {
             subjectID: ctx.request.body.subjectID || 0
         };
     try {
-        let result = await ctx.execSql('update contact_user set ? where phone = ?', [data, userID]);
+        let result = await ctx.execSql('update contact_user set ? where id = ?', [data, userID]);
         ctx.body = {
             success: true,
             message: ''

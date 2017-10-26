@@ -5,7 +5,7 @@
         <navigator url="/pages/update/update?userid={{userID}}" hover-class="none">
             <view class="user-logo-section">
                 <text class="user-info-content user-name">{{user.name}}</text>
-                <text class="user-info-content user-gender">{{user.gender}}</text>
+                <text class="user-info-content user-gender">{{user.gender === 1 ? '男' : '女'}}</text>
             </view>
             <view class="user-logo-section">
                 <text class="user-info-content user-phone">{{user.phone}}</text>

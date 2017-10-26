@@ -1,5 +1,6 @@
 const app = getApp();
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
 	/**
 	 * 页面的初始数据
@@ -16,6 +17,7 @@ Page({
 		this.setData({
 			userID: wx.getStorageSync('USERID')
 		});
+		console.log('userID', this.data.userID);
 		let that = this;
 		wx.request({
 			url: `${app.globalData.apiUrl}/getContactByID/${that.data.userID}`,
@@ -52,4 +54,4 @@ Page({
 			title: `${this.data.user.name}的名片`
 		}
 	}
-})
+}))

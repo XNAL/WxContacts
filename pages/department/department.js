@@ -1,5 +1,6 @@
 const app = getApp();
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
 	/**
 	 * 页面的初始数据
@@ -49,9 +50,8 @@ Page({
 	 * 搜索
 	 */
 	search: function (e) {
-		console.log(this.data.keyword);
-		wx.redirectTo({
+		wx.navigateTo({
 			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
 		})
 	}
-})
+}))

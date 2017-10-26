@@ -3,7 +3,7 @@
 		<text class="app-title">校园通讯录</text>
         <form class="login-form">
             <view class="section">
-                <input name="userID" type="number" bindinput="bindUserIDInput" placeholder="手机号码" />
+                <input name="phone" type="number" bindinput="bindPhoneInput" placeholder="手机号码" />
             </view>
             <view class="section">
                 <input name="password" bindinput="bindPasswordInput" type="password" password="true" placeholder="密码" />

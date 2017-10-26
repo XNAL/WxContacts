@@ -5,7 +5,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		userID: '',
+		phone: '',
 		password: '',
 		isError: false,
 		errorText: ''
@@ -21,9 +21,9 @@ Page({
 	/**
 	 * 输入手机号（用户名）
 	 */
-	bindUserIDInput: function (e) {
+	bindPhoneInput: function (e) {
 		this.setData({
-			userID: e.detail.value
+			phone: e.detail.value
 		});
 	},
 
@@ -40,10 +40,10 @@ Page({
 	 * 点击登录按钮
 	 */
 	login: function (e) {
-		if (this.data.userID === '' || this.data.password === '') {
+		if (this.data.phone === '' || this.data.password === '') {
 			this.setData({
 				isError: true,
-				errorText: "手机号或密码不能为空"
+				errorText: "手机号码或密码不能为空"
 			});
 			return;
 		}
@@ -55,7 +55,7 @@ Page({
 		wx.request({
 			url: `${app.globalData.apiUrl}/login`,
 			data: {
-				userID: this.data.userID,
+				phone: this.data.phone,
 				password: this.data.password
 			},
 			method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
@@ -63,7 +63,7 @@ Page({
 			success: function (res) {
 				// success
 				if (res.data.success) {
-					wx.setStorageSync('USERID', that.data.userID);
+					wx.setStorageSync('USERID', res.data.userID);
 
 					wx.switchTab({
 						url: "/pages/department/department"

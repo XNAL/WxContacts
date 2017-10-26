@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="card-container">
+    <view class="card-container" wx:if="{{dataType !== 3}}">
         <view class="section">
             <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索" bindconfirm="search"/>
         </view>
@@ -9,34 +9,25 @@
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>
-                <text class="card-gender">{{card.gender}}</text>
+                <text class="card-gender">{{card.gender === 1 ? '男' : '女'}}</text>
                 <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
             </view>
             <view class="card-section">
                 <text class="card-deptname">{{card.deptName}}</text>
                 <text class="card-depttel" data-phone="{{card.deptTel}}" bindtap="callPhone">{{card.deptTel}}</text>
             </view>
-            <!-- <view class="card-remark-section">
-                <text class="card-remark-title">备注：</text>
-                <text class="card-remark">{{card.remark}}</text>
-            </view> -->
         </view>
         <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 2}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>
-                <text class="card-gender">{{card.gender}}</text>
+                <text class="card-gender">{{card.gender === 1 ? '男' : '女'}}</text>
                 <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
             </view>
             <view class="card-section">
                 <text class="card-depttel">{{card.subject}}</text>
             </view>
-            <!-- <view class="card-remark-section">
-                <text class="card-remark-title">备注：</text>
-                <text class="card-remark">{{card.remark}}</text>
-            </view> -->
         </view>
-        <!-- <view class="loading" hidden="{{!isLoading}}">正在加载更多...</view> -->
         <view class="loading" hidden="{{!isLoading}}">努力加载中...</view>
         <view class="loading no-more" hidden="{{!isNoMore}}">没有更多了</view>
     </scroll-view>

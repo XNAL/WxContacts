@@ -1,11 +1,12 @@
 function loginCheck(pageObj) {
 	if (pageObj.onLoad) {
+		console.log(pageObj)
 		let _onLoad = pageObj.onLoad;
-		pageObj.onLoad = function () {
+		pageObj.onLoad = function (options) {
 			if(wx.getStorageSync('USERID')) {
 				//获取页面实例，防止this劫持
 				let currentInstance = getPageInstance();
-				_onLoad.call(currentInstance);
+				_onLoad.call(currentInstance, options);
 
 			} else {
 				//跳转到登录页

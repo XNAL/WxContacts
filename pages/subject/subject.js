@@ -50,8 +50,7 @@ Page(filter.loginCheck({
 	 * 搜索
 	 */
 	search: function (e) {
-		console.log(this.data.keyword);
-		wx.redirectTo({
+		wx.navigateTo({
 			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
 		})
 	}

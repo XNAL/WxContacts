@@ -1,5 +1,6 @@
 const app = getApp();
-Page({
+const filter = require('../../utils/filter');
+Page(filter.loginCheck({
 
 	/**
 	 * 页面的初始数据
@@ -105,29 +106,26 @@ Page({
 				// success
 				wx.hideLoading();
 				if (res.data.success) {
-					// wx.showToast({
-					// 	title: '成功',
-					// 	icon: 'success',
-					// 	duration: 2000,
-					// 	success: function () {
-					// 		setTimeout(() => {
-					// 			wx.switchTab({
-					// 				url: "/pages/user/user"
-					// 			});
-					// 		}, 2000)
-					// 	}
-					// })
+					wx.showToast({
+						title: '成功',
+						icon: 'success',
+						success: function () {
+							setTimeout(() => {
+								wx.switchTab({
+									url: "/pages/user/user"
+								});
+							}, 1500)
+						}
+					})
 
 				}
 			},
 			fail: function () {
 				// fail
-				wx.hideLoading();
 			},
 			complete: function () {
 				// complete
-				wx.hideLoading();
 			}
 		})
 	}
-})
+}))
