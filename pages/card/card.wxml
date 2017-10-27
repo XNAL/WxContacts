@@ -4,28 +4,33 @@
             <input name="keyword" bindinput="bindKeywordInput" placeholder="请输入关键字" confirm-type="搜索" bindconfirm="search"/>
         </view>
     </view>
+    <view class="dept-phone" wx:if="{{ dataType === 1  && cardsData.length > 0}}">
+        <text>部门电话：</text>
+        <text class="tel" data-phone="{{cardsData[0].deptTel}}" bindtap="callPhone">{{cardsData[0].deptTel}}</text>
+    </view>
     <scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="loadMore">
         <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 1 || dataType === 3}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
                 <text class="card-name">{{card.name}}</text>
-                <text class="card-gender">{{card.gender === 1 ? '男' : '女'}}</text>
-                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
+                <image class="img-gender" mode="aspectFit" src="/image/male.png" wx:if="{{card.gender == 1}}"></image>
+                <image class="img-gender" mode="aspectFit" src="/image/female.png" wx:if="{{card.gender == 2}}"></image>
             </view>
             <view class="card-section">
-                <text class="card-deptname">{{card.deptName}}</text>
-                <text class="card-depttel" data-phone="{{card.deptTel}}" bindtap="callPhone">{{card.deptTel}}</text>
+                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
             </view>
         </view>
         <view class="scroll-view-item" wx:key="index" wx:for="{{cardsData}}" wx:for-item="card" wx:if="{{ dataType === 2}}">
             <image class="card-logo" mode="aspectFit" src="{{card.logo ? card.logo : '/image/user.png'}}"></image>
             <view class="card-section">
+                <image class="img-gender" mode="aspectFit" src="/image/male.png" wx:if="{{card.gender == 1}}"></image>
+                <image class="img-gender" mode="aspectFit" src="/image/female.png" wx:if="{{card.gender == 2}}"></image>
                 <text class="card-name">{{card.name}}</text>
-                <text class="card-gender">{{card.gender === 1 ? '男' : '女'}}</text>
-                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
+                <!-- <text class="card-gender">{{card.gender === 1 ? '男' : '女'}}</text> -->
             </view>
             <view class="card-section">
-                <text class="card-depttel">{{card.subject}}</text>
+                <text class="card-phone" data-phone="{{card.phone}}" bindtap="callPhone">{{card.phone}}</text>
+                <!-- <text class="card-depttel">{{card.subject}}</text> -->
             </view>
         </view>
         <view class="loading" hidden="{{!isLoading}}">努力加载中...</view>

@@ -2,6 +2,7 @@
 
 .container {
 	padding: 0;
+    background-color: #fff;
 }
 
 .dept-container {

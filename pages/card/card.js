@@ -23,7 +23,7 @@ Page(filter.loginCheck({
 		console.log('type0', options);
 		let type = options.type ? parseInt(options.type) : 1,
 			keyword = type === 3 ? options.title : '';
-			console.log('type', type);
+		console.log('type', type);
 		this.setData({
 			dataType: type,
 			dataId: options.id ? parseInt(options.id) : 0,
@@ -48,11 +48,6 @@ Page(filter.loginCheck({
 			});
 			this.fetchCardList();
 		}
-	},
-	callPhone: function (e) {
-		wx.makePhoneCall({
-			phoneNumber: e.currentTarget.dataset.phone
-		})
 	},
 
 	fetchCardList: function () {
@@ -111,6 +106,28 @@ Page(filter.loginCheck({
 	search: function (e) {
 		wx.navigateTo({
 			url: '/pages/card/card?id=0&type=3&title=' + this.data.keyword
+		})
+	},
+
+	callPhone: function (e) {
+		wx.makePhoneCall({
+			phoneNumber: e.currentTarget.dataset.phone
+		})
+	},
+
+	showDeptTel: function (e) {
+		let phone = e.currentTarget.dataset.tel;
+		wx.showModal({
+			title: '部门电话',
+			content: phone,
+			confirmText: '拨打',
+			success: function (res) {
+				if (res.confirm) {
+					wx.makePhoneCall({
+						phoneNumber: phone
+					})
+				}
+			}
 		})
 	}
 }))

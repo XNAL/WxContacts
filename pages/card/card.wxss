@@ -33,7 +33,22 @@
 .container scroll-view {
     padding-top: 20rpx;
 }
-
+.dept-phone {
+    display: block;
+    margin-top: 20rpx;
+    width: 100%;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    background-color: #fff;
+    border-width: 2rpx 0;
+    border-style: solid;
+    border-color: #ddd;
+    box-shadow: 0 8rpx 4rpx #eee;
+    text-align: center;
+}
+.dept-phone .tel {
+    color: #2d8cf0;
+}
 .scroll-view-item {
     position: relative;
     margin: 0 0 20rpx;
@@ -57,29 +72,26 @@
 }
 
 .scroll-view-item .card-section {
+    position: relative;
     margin-left: 160rpx;
     line-height: 80rpx;
 }
-
-.scroll-view-item .card-name {
-    margin-left: 40rpx;
+.scroll-view-item .img-gender {
+    position: absolute;
+    top: 16rpx;
+    right: 0;
+    width: 36rpx;
+    height: 46rpx;
 }
-
-.scroll-view-item .card-gender {
+.scroll-view-item .card-name {
     margin-left: 40rpx;
 }
 
 .scroll-view-item .card-phone {
     margin-left: 40rpx;
+    color: #2d8cf0;
 }
 
-.scroll-view-item .card-deptname {
-    margin-left: 40rpx;
-}
-
-.scroll-view-item .card-depttel {
-    margin-left: 40rpx;
-}
 
 .card-remark-section {
     margin-top: 20rpx;

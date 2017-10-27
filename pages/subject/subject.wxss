@@ -1,6 +1,7 @@
 /* pages/department/department.wxss */
 .container {
 	padding: 0;
+    background-color: #fff;
 }
 .subject-container {
 	width: 100%;
