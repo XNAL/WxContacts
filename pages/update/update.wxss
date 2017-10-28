@@ -1,3 +1,6 @@
+page {
+    height: 100%;
+}
 .container {
     padding: 0;
     background-color: #fff;

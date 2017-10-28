@@ -1,6 +1,5 @@
 function loginCheck(pageObj) {
 	if (pageObj.onLoad) {
-		console.log(pageObj)
 		let _onLoad = pageObj.onLoad;
 		pageObj.onLoad = function (options) {
 			if(wx.getStorageSync('USERID')) {

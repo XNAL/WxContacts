@@ -17,7 +17,6 @@ Page(filter.loginCheck({
 		this.setData({
 			userID: wx.getStorageSync('USERID')
 		});
-		console.log('userID', this.data.userID);
 		let that = this;
 		wx.request({
 			url: `${app.globalData.apiUrl}/getContactByID/${that.data.userID}`,
